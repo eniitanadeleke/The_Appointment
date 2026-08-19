@@ -1,0 +1,1 @@
+import pattern from '../../assets/images/brand-pattern.png';import './Creed.css';export default function Creed(){return <section className="creed" style={{'--pattern':`url(${pattern})`}}><div className="wrap"><span>THE APPOINTMENT CREED</span><p>Know God. <em>Walk with Him.</em> Live for Him.</p></div></section>}
