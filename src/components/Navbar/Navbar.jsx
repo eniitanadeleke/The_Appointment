@@ -6,6 +6,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  const googleForm =
+    'https://docs.google.com/forms/d/1M8GNOnSw_7QsPqP49i7lhmVMShqDtVT81xPSXWu2iYE/viewform';
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12);
 
@@ -18,18 +21,35 @@ export default function Navbar() {
   return (
     <header className={`nav ${scrolled ? 'nav-scrolled' : ''}`}>
       <div className="wrap nav-inner">
+
         <a className="nav-brand" href="#top">
           <img src={logo} alt="The Appointment" />
         </a>
 
         <nav className={`nav-links ${open ? 'open' : ''}`}>
-          <a href="#about" onClick={() => setOpen(false)}>About</a>
-          <a href="#gather" onClick={() => setOpen(false)}>Gatherings</a>
-          <a href="#join" onClick={() => setOpen(false)}>Join</a>
-          <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
+          <a href="#about" onClick={() => setOpen(false)}>
+            About
+          </a>
+
+          <a href="#gather" onClick={() => setOpen(false)}>
+            Gatherings
+          </a>
+
+          <a href="#join" onClick={() => setOpen(false)}>
+            Join
+          </a>
+
+          <a href="#faq" onClick={() => setOpen(false)}>
+            FAQ
+          </a>
         </nav>
 
-        <a className="nav-cta" href="#join">
+        <a
+          className="nav-cta"
+          href={googleForm}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span>Join Us</span>
           <span className="nav-arrow">↗</span>
         </a>
@@ -43,6 +63,7 @@ export default function Navbar() {
           <span />
           <span />
         </button>
+
       </div>
     </header>
   );
